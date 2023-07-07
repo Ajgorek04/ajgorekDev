@@ -5,14 +5,35 @@
     header {
         display: flex;
         border: 1px solid red;
+        justify-content: space-between;
 
-        nav {
-            color: #fff;
-    
-            img {
-                width: 35%;
+        img {
+            max-width: 20vh;
+        }
+
+        ul {
+            color: $text-color;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            li {
+
+            }
+        }
+
+        div {
+            min-width: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            i {
+                color: #fff;
+
             }
         }
     }
-
 }
