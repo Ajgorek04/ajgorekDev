@@ -1,12 +1,18 @@
 .main {
     min-height: 100%;
     background-color: #000;
+
     header {
         display: flex;
         border: 1px solid red;
+
+        nav {
+            color: #fff;
+    
+            img {
+                width: 35%;
+            }
+        }
     }
 
-    nav {
-        color: #fff;
-    }
 }
