@@ -1,8 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap'); // home abt contact itp
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap'); // home aboutme projects contact 
 
 .main {
-    min-height: 100%;
+    height: 100%;
     background-color: #000;
+
+    .menu {
+        color: #fff;
+        width: 0;
+        height: 0;
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-bottom-left-radius: 100%;
+        transition: width 0.5s, height 0.5s, border-radius 0.5s;
+
+        ul {
+            list-style-type: none;
+
+            a {
+                text-decoration: none;
+                color: $text-color;
+
+                li {
+                    font-family: $main-font;
+                    font-size: 1.5rem;
+                    text-align: center;
+                    padding: 10px;
+                }
+            }
+
+        }
+    }
+
+    .menu.open-menu {
+        width: 100%;
+        height: 100vh;
+        border-bottom-left-radius: 0;
+    }
 
     header {
         display: flex;
@@ -24,22 +63,28 @@
             align-items: center;
             gap: 5%;
 
-            li {
-                min-width: 5rem;
-                text-align: center;
-                transition: 0.5s ease;
-                position: relative;
-                overflow: hidden;
-                padding: 5px;
-                border-radius: 10px;
-            }
-                li a {
-                    font-family: 'Josefin Sans', sans-serif;
-                    font-weight: 600;
-                    text-decoration: none;
-                    color: #fff;
+            a {
+                text-decoration: none;
+                transition: 1s ease;
+
+
+                li {
+                    min-width: 5rem;
+                    text-align: center;
+                    transition: 0.5s ease;
                     position: relative;
-                    z-index: 2;
+                    overflow: hidden;
+                    padding: 5px;
+                    border-radius: 10px;
+
+                    p {
+                        font-family: $main-font;
+                        font-weight: 600;
+                        text-decoration: none;
+                        color: #fff;
+                        position: relative;
+                        z-index: 2;
+                    }
                 }
 
                 li::before {
@@ -64,22 +109,26 @@
                     border-radius: 10px;
                 }
 
-            @keyframes rotateBorder {
-                0% {
-                    transform: rotate(0deg);
+                @keyframes rotateBorder {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+
+                    100% {
+                        transform: rotate(360deg);
+                    }
                 }
-
-                100% {
-                    transform: rotate(360deg);
-                }
             }
 
-
-            li:first-child{
+            a:first-child li::before {
+                background: linear-gradient(#ff0000, #0000ff);
+                /* Przykładowy kolor tła */
             }
 
-            li:first-child:hover{
+            li:hover {
+                padding: 0.75rem;
             }
+
         }
 
         div {
@@ -89,8 +138,45 @@
             justify-content: center;
 
             i {
-                color: #fff;
+                color: $text-color;
+                cursor: pointer;
+            }
+
+            .moon {
+                display: none;
+            }
+
+            .hamburger {
+                display: none;
+                z-index: 2;
             }
         }
     }
+}
+
+
+@media only screen and (max-width: 43.75rem) {
+    .main {
+        header {
+            ul {
+                display: none;
+
+            }
+
+            div {
+                width: 100%;
+                justify-content: flex-end;
+
+                i {
+                    margin-right: 2rem;
+                    font-size: 1.75rem;
+                }
+
+                .hamburger {
+                    display: block;
+                }
+            }
+        }
+    }
+
 }
