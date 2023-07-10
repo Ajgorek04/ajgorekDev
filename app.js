@@ -42,10 +42,20 @@ moon.addEventListener('click', () => {
 
 // Hamburger menu
 const hamburger = document.querySelector('.hamburger');
-const menu = document.querySelector('.menu')
+const menu = document.querySelector('.menu');
+const spanElements = document.querySelectorAll('header.contentHeader span');
+const arrowdown = document.querySelector('.arrowdown');
+
 
 hamburger.onclick = function() {
   menu.classList.toggle("open-menu");
+
+  spanElements.forEach(span => {
+    span.classList.toggle('span-hider');
+  });
+
+  arrowdown.classList.toggle('arrow-hider');
+  
 };
 
 // Chowanie po nacisnieciu na jakis link

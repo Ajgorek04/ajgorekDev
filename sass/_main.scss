@@ -3,7 +3,6 @@
 .main {
     height: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../imgs/background.png");
-    background-repeat: no;
     background-size: cover;
     background-position: center;
 
@@ -11,7 +10,7 @@
         color: #fff;
         width: 0;
         height: 0;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.75);
         position: fixed;
         top: 0;
         right: 0;
@@ -179,23 +178,31 @@
         align-items: center;
 
         .content {
-            margin: 0% 0% 5% 2.5%;
+            margin-left: 2.5%;
             min-height: 50%;
-            min-width: 50%;
+            max-width: 50%;
 
             .contentHeader {
                 padding: 1rem;
                 font-size: 2rem;
-                position: relative;
                 display: flex;
+                border-bottom: 2px solid $text-color;
+                width: 100%;
+                justify-content: center;
 
                 span {
                     position: relative;
                     display: inline-block;
                     color: #fff;
                     animation: flip 2s infinite;
-                    animation-delay: calc(.25s * var(--i))
+                    animation-delay: calc(.25s * var(--i));
                 }
+
+                .span-hider {
+                    position: unset;
+                    animation: none;
+                }
+
                 @keyframes flip {
                     0%,80% {
                       transform: rotateY(360deg) 
@@ -203,17 +210,38 @@
                   }
             }
 
-            hr {
-                margin: 0px 10px 0px 10px;
-            }
-
             .content_text {
                 p {
                     font-size: 1.25rem;
-                    padding: 2%
+                    margin: 2%;
+                }
+            }
+
+            .scroll {
+
+
+                .scrollDown {
+                    font-size: 1.25rem;
+                    display: inline-flex;
+                    margin: 10% 2%;
                 }
 
-                ;
+                .arrowdown {
+                    animation: bouncing 2s infinite;
+                }
+
+
+                @keyframes bouncing {
+                    0% {
+                        transform: translateY(0);
+                    }
+                    50%{
+                        transform: translateY(1.25rem);
+                    }
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
             }
         }
     }
@@ -242,6 +270,68 @@
                 }
             }
         }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            .content {
+                margin: 0;
+                max-height: 100%;
+                max-width: 75%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+    
+                .contentHeader {
+                    padding: 1rem;
+                    font-size: 1.5rem;
+                    letter-spacing: 0.25rem;
+                }
+    
+                .content_text {
+                    p {
+                        font-size: 1rem;
+                        margin: 10%;
+                        text-align: center;
+                    }
+                }
+    
+                .scroll {
+
+                    .scrollDown {
+                        font-size: 1rem;
+                        display: inline-flex;
+                        margin: 50% 0% 0% 0%;
+                    }
+    
+                    .arrowdown {
+                        font-size: 1.25rem;
+                        animation: bouncing 2s infinite;
+                    }
+                        
+                    .arrow-hider {
+                        animation: none;
+                    }
+    
+                    @keyframes bouncing {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        50%{
+                            transform: translateY(0.75rem);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+        }
     }
+
+    
 
 }
