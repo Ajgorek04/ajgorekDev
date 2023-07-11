@@ -1,3 +1,10 @@
+// Powrot na gore strony po f5
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
+//
+
+
 // Pobierz wszystkie linki nawigacyjne
 const navLinks = document.querySelectorAll('header ul a');
 
@@ -16,12 +23,6 @@ navLinks.forEach(link => {
     });
   });
 });
-//
-
-// Powrot na gore strony
-window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-}
 //
 
 
@@ -75,3 +76,21 @@ menuLink.forEach(link => {
 });
 
 // Hamburger menu end
+
+
+// Section about me
+const aboutmeHeader = document.querySelector('.aboutme_header');
+const aboutmeHeaderPosition  = aboutmeHeader.getBoundingClientRect().top; //odleglosc elementu od gornej krawedzi strony
+
+const aboutmeHeaderH1 = document.querySelector('.aboutme_header_h1');
+
+window.addEventListener('scroll', () => {
+  const wiem = window.scrollY
+  console.log(wiem)
+
+  if(wiem >= 200){
+    aboutmeHeaderH1.classList.add('aboutmeWiem');
+  } else {
+  }
+
+})

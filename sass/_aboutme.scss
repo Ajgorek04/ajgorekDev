@@ -1,4 +1,27 @@
 .aboutme {
     min-height: 100%;
-    background-color: blue;
+    background-color: #111;
+
+    .aboutme_header {
+        font-family: $main-font;
+        color: $text-color;
+        padding: 2rem;
+        font-size: 1.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        .aboutme_header_h1 {
+            opacity: 0;
+            transition: all 1s ease;
+            transform: translateX(100rem);
+        }
+
+        .aboutmeWiem{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
 }
