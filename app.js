@@ -64,6 +64,13 @@ const menuLink = document.querySelectorAll('.menu-link')
 menuLink.forEach(link => {
   link.onclick = function() {
     menu.classList.remove("open-menu");
+    
+    spanElements.forEach(span => {
+      span.classList.toggle('span-hider');
+    });
+
+    arrowdown.classList.toggle('arrow-hider');
+
   }
 });
 
