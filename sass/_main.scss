@@ -112,7 +112,7 @@
                     margin: auto;
                     width: 100%;
                     height: 75%;
-                    background: linear-gradient(#00ccff, #d500f9);
+                    background: linear-gradient(#00a3cc, #9800b3);
                     animation: rotateBorder 5s linear infinite;
                 }
 
@@ -137,7 +137,6 @@
 
             a:first-child li::before {
                 background: linear-gradient(#ff0000, #0000ff);
-                /* Przykładowy kolor tła */
             }
 
             li:hover {

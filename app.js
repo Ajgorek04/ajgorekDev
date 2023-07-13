@@ -88,9 +88,10 @@ window.addEventListener('scroll', () => {
   const wiem = window.scrollY
   console.log(wiem)
 
-  if(wiem >= 200){
+  if(wiem >= 100){
     aboutmeHeaderH1.classList.add('aboutmeWiem');
   } else {
+    aboutmeHeaderH1.classList.remove('aboutmeWiem')
   }
 
 })

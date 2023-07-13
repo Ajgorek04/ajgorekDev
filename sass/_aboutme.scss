@@ -24,4 +24,22 @@
         }
     }
 
+    .info {
+        font-family: $main-font;
+        color: $text-color;
+        display: flex;
+        height: 100%;
+        
+        .me{
+            width: 100%;
+            height: 100%;
+            background-color: red;
+        }
+
+        .technologies {
+            width: 100%;
+            background-color: blue;
+        }
+    }
+
 }
