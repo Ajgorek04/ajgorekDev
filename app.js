@@ -4,28 +4,6 @@ window.onbeforeunload = function () {
 }
 //
 
-
-// Pobierz wszystkie linki nawigacyjne
-const navLinks = document.querySelectorAll('header ul a');
-
-// Obsłuż kliknięcie na każdy link nawigacyjny
-navLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    // Zatrzymaj domyślne zachowanie
-    e.preventDefault();
-
-    // Pobierz wartość atrybutu href
-    const targetId = link.getAttribute('href').substring(1);
-
-    // Przewiń do odpowiedniej sekcji
-    document.getElementById(targetId).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-//
-
-
 // Zmiana kolorów strony
 const moon = document.querySelector('.moon');
 const sun = document.querySelector('.sun');
@@ -85,10 +63,9 @@ const aboutmeHeaderPosition  = aboutmeHeader.getBoundingClientRect().top; //odle
 const aboutmeHeaderH1 = document.querySelector('.aboutme_header_h1');
 
 window.addEventListener('scroll', () => {
-  const wiem = window.scrollY
-  console.log(wiem)
+  const windowScrollY = window.scrollY
 
-  if(wiem >= 100){
+  if(windowScrollY >= 100){
     aboutmeHeaderH1.classList.add('aboutmeWiem');
   } else {
     aboutmeHeaderH1.classList.remove('aboutmeWiem')

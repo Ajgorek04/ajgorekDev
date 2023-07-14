@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap'); // home aboutme projects contact 
-
 .main {
     height: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../imgs/background.png");
@@ -221,7 +220,6 @@
                 .scroll_a{
                     text-decoration: none;
                     color: $text-color;
-                    position: relative;
                 }
 
                 .scroll_a::after {
@@ -243,6 +241,10 @@
                     font-size: 1.25rem;
                     display: inline-flex;
                     margin: 10% 2%;
+                }
+
+                .scrollDownHider {
+                    display: none;
                 }
 
                 .arrowdown {
