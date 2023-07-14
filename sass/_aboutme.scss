@@ -1,6 +1,8 @@
 .aboutme {
     min-height: 100%;
-    background-color: #111;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
 
     .aboutme_header {
         font-family: $main-font;
@@ -28,18 +30,66 @@
         font-family: $main-font;
         color: $text-color;
         display: flex;
-        height: 100%;
+        flex: 1;
         
-        .me{
+        .me {
             width: 100%;
-            height: 100%;
-            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+
+            .me_info {
+                width: 60%;
+                height: 80%;
+                border-radius: 25px;
+                background-color: #0d0d0d;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+
+                .me_info_text {
+                    padding: 25px;
+
+                    h1 {
+                        padding-bottom: 25px;
+                    }
+                }
+
+
+                img {
+                    width: 50%;
+                    border-radius: 50%;
+                    align-self: center;
+                    margin: 10%;
+                    margin-top: auto;
+                }
+            }
+
         }
 
         .technologies {
             width: 100%;
-            background-color: blue;
-        }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            .technologies_info {
+                width: 60%;
+                height: 80%;
+                border-radius: 20px;
+                background-color: #0d0d0d;
+                text-align: center;
+
+                .technologies_info_text {
+                    padding: 25px;
+
+                    h1 {
+                        padding-bottom: 25px;
+                    }
+                }
+            }
+        } 
     }
 
 }
