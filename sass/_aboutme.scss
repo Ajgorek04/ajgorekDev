@@ -17,12 +17,12 @@
         .aboutme_header_h1 {
             opacity: 0;
             transition: all 0.75s ease;
-            transform: translateX(100rem);
+            transform: translateY(-100rem);
         }
 
-        .aboutmeWiem{
+        .aboutmeScrollY{
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
         }
     }
 
@@ -31,12 +31,14 @@
         color: $text-color;
         display: flex;
         flex: 1;
+        overflow: hidden;
         
         .me {
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.75s ease;
             
 
             .me_info {
@@ -47,6 +49,10 @@
                 text-align: center;
                 display: flex;
                 flex-direction: column;
+                opacity: 0;
+                transition: all 0.75s ease;
+                transform: translateX(-100rem);
+
 
                 .me_info_text {
                     padding: 25px;
@@ -74,11 +80,33 @@
 
         }
 
+        .goDown{
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            margin-bottom: 5%;
+
+            a {
+                text-decoration: none;
+                color: $text-color;
+                transition: all 1s ease;
+                opacity: 1;
+                transform: translateY(100rem);
+                
+            }
+
+            a:hover{
+                transform: rotateY(360deg);
+                scale: 1.5;
+            }
+        }
+
         .technologies {
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
+
         
             .technologies_info {
                 width: 60%;
@@ -86,6 +114,9 @@
                 border-radius: 20px;
                 background-color: #0d0d0d;
                 text-align: center;
+                opacity: 0;
+                transition: all 0.75s ease;
+                transform: translateX(100rem);
 
                 .technologies_info_text {
                     padding: 25px;
@@ -178,4 +209,14 @@
         display: flex;
         flex-direction: column;
     }
+
+    .goDown {
+        margin-top: 5%;
+      }
+    
+
+
+      .goDown {
+        order: 1; /* Przeniesienie klasy "goDown" pod sekcję "technologies" */
+      }
 }

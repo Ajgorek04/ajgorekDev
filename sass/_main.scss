@@ -55,6 +55,7 @@
         width: 100%;
         height: 100vh;
         border-bottom-left-radius: 0;
+        z-index: 2;
     }
 
     .mainHeader {
@@ -220,6 +221,11 @@
                 .scroll_a{
                     text-decoration: none;
                     color: $text-color;
+                    position: relative;
+                }
+
+                .scroll_a_hider {
+                    position: unset;
                 }
 
                 .scroll_a::after {

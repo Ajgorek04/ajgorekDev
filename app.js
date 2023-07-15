@@ -22,19 +22,9 @@ moon.addEventListener('click', () => {
 // Hamburger menu
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.menu');
-const spanElements = document.querySelectorAll('header.contentHeader span');
-const arrowdown = document.querySelector('.arrowdown');
-
 
 hamburger.onclick = function() {
   menu.classList.toggle("open-menu");
-
-  spanElements.forEach(span => {
-    span.classList.toggle('span-hider');
-  });
-
-  arrowdown.classList.toggle('arrow-hider');
-  
 };
 
 // Chowanie po nacisnieciu na jakis link
@@ -43,18 +33,15 @@ const menuLink = document.querySelectorAll('.menu-link')
 menuLink.forEach(link => {
   link.onclick = function() {
     menu.classList.remove("open-menu");
-    
-    spanElements.forEach(span => {
-      span.classList.toggle('span-hider');
-    });
-
-    arrowdown.classList.toggle('arrow-hider');
-
   }
 });
 
 // Hamburger menu end
 
+
+
+
+// Animacja wlatywania
 
 // Section about me
 const aboutmeHeader = document.querySelector('.aboutme_header');
@@ -62,13 +49,41 @@ const aboutmeHeaderPosition  = aboutmeHeader.getBoundingClientRect().top; //odle
 
 const aboutmeHeaderH1 = document.querySelector('.aboutme_header_h1');
 
+const me_info = document.querySelector('.me_info');
+const technologies_info = document.querySelector('.technologies_info');
+const goDownI = document.querySelector('#goDownI');
+
 window.addEventListener('scroll', () => {
   const windowScrollY = window.scrollY
 
   if(windowScrollY >= 100){
-    aboutmeHeaderH1.classList.add('aboutmeWiem');
+    aboutmeHeaderH1.classList.add('aboutmeScrollY');
   } else {
-    aboutmeHeaderH1.classList.remove('aboutmeWiem')
+    aboutmeHeaderH1.classList.remove('aboutmeScrollY')
   }
 
+  
+if(windowScrollY >= 250) {
+  me_info.style.opacity = '1';
+  me_info.style.transform = 'translateX(0)';
+
+  
+  technologies_info.style.opacity = '1';
+  technologies_info.style.transform = 'translateX(0)';
+    
+  goDownI.style.transform = 'translateY(0)'
+  goDownI.style.opacity = '1'
+} else {
+  me_info.style.opacity = '0';
+  me_info.style.transform = 'translateX(-100rem)';
+
+  technologies_info.style.opacity = '0';
+  technologies_info.style.transform = 'translateX(100rem)';
+
+  goDownI.style.transform = 'translateY(100rem)'
+  goDownI.style.opacity = '1'
+}
+
 })
+
+// koniec sekcji aboutme
