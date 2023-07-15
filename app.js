@@ -42,10 +42,8 @@ menuLink.forEach(link => {
 
 
 // Animacja wlatywania
-
-// Section about me
 const aboutmeHeader = document.querySelector('.aboutme_header');
-const aboutmeHeaderPosition  = aboutmeHeader.getBoundingClientRect().top; //odleglosc elementu od gornej krawedzi strony
+// const aboutmeHeaderPosition  = aboutmeHeader.getBoundingClientRect().top; //odleglosc elementu od gornej krawedzi strony
 
 const aboutmeHeaderH1 = document.querySelector('.aboutme_header_h1');
 
@@ -56,6 +54,8 @@ const goDownI = document.querySelector('#goDownI');
 window.addEventListener('scroll', () => {
   const windowScrollY = window.scrollY
 
+  console.log(windowScrollY)
+
   if(windowScrollY >= 100){
     aboutmeHeaderH1.classList.add('aboutmeScrollY');
   } else {
@@ -63,27 +63,34 @@ window.addEventListener('scroll', () => {
   }
 
   
-if(windowScrollY >= 250) {
-  me_info.style.opacity = '1';
-  me_info.style.transform = 'translateX(0)';
+  if(windowScrollY >= 250) {
+    me_info.style.opacity = '1';
+    me_info.style.transform = 'translateX(0)';
 
-  
-  technologies_info.style.opacity = '1';
-  technologies_info.style.transform = 'translateX(0)';
     
-  goDownI.style.transform = 'translateY(0)'
-  goDownI.style.opacity = '1'
-} else {
-  me_info.style.opacity = '0';
-  me_info.style.transform = 'translateX(-100rem)';
+    technologies_info.style.opacity = '1';
+    technologies_info.style.transform = 'translateX(0)';
+      
+    goDownI.style.transform = 'translateY(0)'
+    goDownI.style.opacity = '1'
+  } else {
+    me_info.style.opacity = '0';
+    me_info.style.transform = 'translateX(-100rem)';
 
-  technologies_info.style.opacity = '0';
-  technologies_info.style.transform = 'translateX(100rem)';
+    technologies_info.style.opacity = '0';
+    technologies_info.style.transform = 'translateX(100rem)';
 
-  goDownI.style.transform = 'translateY(100rem)'
-  goDownI.style.opacity = '1'
-}
+    goDownI.style.transform = 'translateY(100rem)'
+    goDownI.style.opacity = '1'
+  }
 
-})
+  // section projects
+  const projectsHeaderH1 = document.querySelector('.projects_header_h1');
 
-// koniec sekcji aboutme
+  if(windowScrollY >= 1000){
+    projectsHeaderH1.classList.add('projectsScrollY');
+  } else {
+    projectsHeaderH1.classList.remove('projectsScrollY')
+  }
+
+});
