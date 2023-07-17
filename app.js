@@ -50,16 +50,19 @@ const goDownI = document.querySelector("#goDownI");
 
 window.addEventListener("scroll", () => {
   const windowScrollY = window.scrollY;
+  const windowWidth = window.innerWidth;
 
-  console.log(windowScrollY);
+  //console.log(windowScrollY);
 
-  if (windowScrollY >= 100) {
+  // Animacja on scroll dla ekranow > 1200
+  if (windowScrollY >= 100 && windowWidth) {
     aboutmeHeaderH1.classList.add("aboutmeScrollY");
   } else {
     aboutmeHeaderH1.classList.remove("aboutmeScrollY");
   }
 
-  if (windowScrollY >= 250) {
+  // Animacja on scroll dla ekranow > 1200
+  if (windowScrollY >= 250 && windowWidth > 1200) {
     me_info.style.opacity = "1";
     me_info.style.transform = "translateX(0)";
 
@@ -76,6 +79,21 @@ window.addEventListener("scroll", () => {
     technologies_info.style.transform = "translateX(100rem)";
 
     goDownI.style.transform = "translateY(100rem)";
+    goDownI.style.opacity = "1";
+  }
+
+  // Animacja on scroll dla ekranow < 1200
+  if (windowScrollY >= 250 && windowWidth < 1200) {
+    me_info.style.opacity = "1";
+    me_info.style.transform = "translateX(0)";
+  }
+  if (windowScrollY >= 800 && windowWidth <= 1200) {
+    technologies_info.style.opacity = "1";
+    technologies_info.style.transform = "translateX(0)";
+  }
+
+  if (windowScrollY >= 1300 && windowWidth <= 1200) {
+    goDownI.style.transform = "translateY(0)";
     goDownI.style.opacity = "1";
   }
 
