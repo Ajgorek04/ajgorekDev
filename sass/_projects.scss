@@ -1,16 +1,17 @@
 .projects {
   min-height: 100%;
-  background-color: #000;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Wyśrodkowuje elementy poziomo na środku */
+  justify-content: flex-start; /* Wyśrodkowuje elementy pionowo na górze */
 
   header {
     font-family: $main-font;
     color: $text-color;
     padding: 2rem;
     font-size: 1.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    text-align: center;
 
     .projects_header_h1 {
       opacity: 0;
@@ -22,5 +23,17 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Pozwala sliderowi rozszerzać się i zajmować pozostałą przestrzeń w sekcji */
+  }
+
+  .slides {
+    background-color: red;
+    width: 50%;
   }
 }
