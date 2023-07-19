@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center; /* Wyśrodkowuje elementy poziomo na środku */
   justify-content: flex-start; /* Wyśrodkowuje elementy pionowo na górze */
+  overflow: hidden;
 
   header {
     font-family: $main-font;

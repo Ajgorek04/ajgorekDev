@@ -2,9 +2,10 @@
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
+
 //
 
-// Zmiana kolorów strony
+// Zmiana kolorów strony - do zrobienia
 const moon = document.querySelector(".moon");
 const sun = document.querySelector(".sun");
 
@@ -17,6 +18,8 @@ moon.addEventListener("click", () => {
   sun.style.display = "block";
   moon.style.display = "none";
 });
+//
+
 //
 
 // Hamburger menu
@@ -38,12 +41,13 @@ menuLink.forEach((link) => {
 
 // Hamburger menu end
 
+//
+
 // Animacja wlatywania
 const aboutmeHeader = document.querySelector(".aboutme_header");
 // const aboutmeHeaderPosition  = aboutmeHeader.getBoundingClientRect().top; //odleglosc elementu od gornej krawedzi strony
 
 const aboutmeHeaderH1 = document.querySelector(".aboutme_header_h1");
-
 const me_info = document.querySelector(".me_info");
 const technologies_info = document.querySelector(".technologies_info");
 const goDownI = document.querySelector("#goDownI");
@@ -51,6 +55,16 @@ const goDownI = document.querySelector("#goDownI");
 window.addEventListener("scroll", () => {
   const windowScrollY = window.scrollY;
   const windowWidth = window.innerWidth;
+
+  const showElement = (
+    element,
+    opacity = 1,
+    translateX = "0",
+    translateY = "0"
+  ) => {
+    element.style.opacity = opacity;
+    element.style.transform = `translateX(${translateX}) translateY(${translateY})`;
+  };
 
   //console.log(windowScrollY);
 
@@ -63,38 +77,25 @@ window.addEventListener("scroll", () => {
 
   // Animacja on scroll dla ekranow > 1200
   if (windowScrollY >= 250 && windowWidth > 1200) {
-    me_info.style.opacity = "1";
-    me_info.style.transform = "translateX(0)";
-
-    technologies_info.style.opacity = "1";
-    technologies_info.style.transform = "translateX(0)";
-
-    goDownI.style.transform = "translateY(0)";
-    goDownI.style.opacity = "1";
+    showElement(me_info);
+    showElement(technologies_info);
+    showElement(goDownI, 1, "0", "0");
   } else {
-    me_info.style.opacity = "0";
-    me_info.style.transform = "translateX(-100rem)";
-
-    technologies_info.style.opacity = "0";
-    technologies_info.style.transform = "translateX(100rem)";
-
-    goDownI.style.transform = "translateY(100rem)";
-    goDownI.style.opacity = "1";
+    showElement(me_info, 0, "-100rem");
+    showElement(technologies_info, 0, "100rem");
+    showElement(goDownI, 1, "0", "100rem");
   }
 
   // Animacja on scroll dla ekranow < 1200
   if (windowScrollY >= 250 && windowWidth < 1200) {
-    me_info.style.opacity = "1";
-    me_info.style.transform = "translateX(0)";
+    showElement(me_info);
   }
   if (windowScrollY >= 800 && windowWidth <= 1200) {
-    technologies_info.style.opacity = "1";
-    technologies_info.style.transform = "translateX(0)";
+    showElement(technologies_info);
   }
 
   if (windowScrollY >= 1300 && windowWidth <= 1200) {
-    goDownI.style.transform = "translateY(0)";
-    goDownI.style.opacity = "1";
+    showElement(goDownI, 1, "0", "0");
   }
 
   // section projects
