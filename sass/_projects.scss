@@ -17,7 +17,7 @@
     .projects_header_h1 {
       opacity: 0;
       transition: all 0.75s ease;
-      transform: translateY(-100rem);
+      transform: translateY(-250%);
     }
 
     .projectsScrollY {
@@ -34,8 +34,11 @@
     width: 100%;
 
     .swiper {
-      width: 50%;
+      width: 65%;
       border-radius: 0.5rem;
+      opacity: 0;
+      transition: all 0.75s ease;
+      transform: translateY(100%);
 
       .swiper-slide {
         text-align: center;
@@ -47,10 +50,10 @@
 
         .sliderTEXT {
           position: absolute;
-          top: 10%;
+          top: 5%;
           color: $text-color;
           font-family: $main-font;
-          font-size: 1.5rem;
+          font-size: 1rem;
         }
 
         img {
@@ -62,9 +65,48 @@
       }
     }
   }
-  h1 {
-    color: $text-color;
-    font-family: $main-font;
-    margin-bottom: 3rem;
+
+  a {
+    text-decoration: none;
+
+    .moreprojects {
+      color: $text-color;
+      font-family: $main-font;
+      margin: 2rem;
+      text-align: center;
+      animation: pulse 2s infinite;
+    }
+
+    .moreprojects:hover {
+      color: #fffccc;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+@media only screen and (max-width: 75rem) {
+  .swiper {
+    width: 95% !important;
+
+    .sliderTEXT {
+      position: absolute;
+      top: 5%;
+      color: $text-color;
+      font-family: $main-font;
+      font-size: 1rem;
+    }
   }
 }

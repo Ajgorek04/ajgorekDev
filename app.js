@@ -38,19 +38,12 @@ menuLink.forEach((link) => {
     menu.classList.remove("open-menu");
   };
 });
-
 // Hamburger menu end
 
 //
 
 // Animacja wlatywania
-const aboutmeHeader = document.querySelector(".aboutme_header");
 // const aboutmeHeaderPosition  = aboutmeHeader.getBoundingClientRect().top; //odleglosc elementu od gornej krawedzi strony
-
-const aboutmeHeaderH1 = document.querySelector(".aboutme_header_h1");
-const me_info = document.querySelector(".me_info");
-const technologies_info = document.querySelector(".technologies_info");
-const goDownI = document.querySelector("#goDownI");
 
 window.addEventListener("scroll", () => {
   const windowScrollY = window.scrollY;
@@ -68,8 +61,14 @@ window.addEventListener("scroll", () => {
 
   //console.log(windowScrollY);
 
-  // Animacja on scroll dla ekranow > 1200
-  if (windowScrollY >= 100 && windowWidth) {
+  // SECTION ABOUT ME
+  const aboutmeHeader = document.querySelector(".aboutme_header");
+  const aboutmeHeaderH1 = document.querySelector(".aboutme_header_h1");
+  const me_info = document.querySelector(".me_info");
+  const technologies_info = document.querySelector(".technologies_info");
+  const goDown = document.querySelector(".goDown");
+
+  if (windowScrollY >= 100) {
     aboutmeHeaderH1.classList.add("aboutmeScrollY");
   } else {
     aboutmeHeaderH1.classList.remove("aboutmeScrollY");
@@ -79,31 +78,71 @@ window.addEventListener("scroll", () => {
   if (windowScrollY >= 250 && windowWidth > 1200) {
     showElement(me_info);
     showElement(technologies_info);
-    showElement(goDownI, 1, "0", "0");
   } else {
-    showElement(me_info, 0, "-100rem");
-    showElement(technologies_info, 0, "100rem");
-    showElement(goDownI, 1, "0", "100rem");
+    showElement(me_info, 0, "-100%");
+    showElement(technologies_info, 0, "100%");
   }
 
+  if (windowScrollY >= 850 && windowWidth > 1200) {
+    showElement(goDown);
+  } else {
+    showElement(goDown, 0, 0, "100%");
+  }
+
+  //
+
   // Animacja on scroll dla ekranow < 1200
-  if (windowScrollY >= 250 && windowWidth < 1200) {
+  if (windowScrollY >= 250 && windowWidth <= 1200) {
     showElement(me_info);
   }
-  if (windowScrollY >= 800 && windowWidth <= 1200) {
+  if (windowScrollY >= 700 && windowWidth <= 1200) {
     showElement(technologies_info);
   }
 
   if (windowScrollY >= 1300 && windowWidth <= 1200) {
-    showElement(goDownI, 1, "0", "0");
+    showElement(goDown);
   }
 
-  // section projects
+  // SECTION PROJECTS
   const projectsHeaderH1 = document.querySelector(".projects_header_h1");
+  const swiper = document.querySelector(".swiper");
+  const moreprojects = document.querySelector(".moreprojects");
 
-  if (windowScrollY >= 1000) {
+  // Animacja on scroll dla ekranow > 1200
+  if (windowScrollY >= 950 && windowWidth > 1200) {
     projectsHeaderH1.classList.add("projectsScrollY");
   } else {
     projectsHeaderH1.classList.remove("projectsScrollY");
   }
+
+  if (windowScrollY >= 1250 && windowWidth > 1200) {
+    showElement(swiper);
+  } else {
+    showElement(swiper, 0, 0, "100%");
+  }
+
+  // Animacja on scroll dla ekranow < 1200
+
+  if (windowScrollY >= 1450 && windowWidth <= 1200) {
+    projectsHeaderH1.classList.add("projectsScrollY");
+  }
+
+  if (windowScrollY >= 1750 && windowWidth <= 1200) {
+    showElement(swiper);
+  }
 });
+
+//
+
+//
+
+// section projects - slider - usuwanie strzalek przy width < 1200 px | 75 rem
+
+const sliderNext = document.querySelector(".swiper-button-next");
+const sliderPrev = document.querySelector(".swiper-button-prev");
+const windowWidth = window.innerWidth;
+
+if (windowWidth <= 1200) {
+  sliderNext.remove();
+  sliderPrev.remove();
+}
