@@ -90,7 +90,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="aboutme" id="aboutme">
         <header class="aboutme_header">
             <h1 class="aboutme_header_h1"> About me </h1>
@@ -152,12 +152,29 @@
             <h1 class="projects_header_h1"> Projects </h1>
         </header>
 
+        <!-- Swiper -->
         <div class="slider">
-            <div class="slides">
-                <img src="imgs/livecard.png" alt="">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <p class="sliderTEXT"> Live Card Typing </p>
+                        <img src="imgs/livecard.png" alt="livecardweb">
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="sliderTEXT"> Calculator </p>
+                        <img src="imgs/calculator.png" alt="calculator">
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="sliderTEXT"> Real Time Typing </p>
+                        <img src="imgs/Realtimetype.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
-
+        <h1> For more projects go to my GitHub which you can find in the section below </h1>
     </section>
 
 
@@ -167,6 +184,29 @@
     </section>
 
     <script src="app.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
 </body>
 
 </html>
