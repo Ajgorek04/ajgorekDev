@@ -164,24 +164,24 @@ window.addEventListener("scroll", () => {
   function window2() {
     if (windowWidth < 1200) {
       console.log(2);
-      if (windowScrollY >= 2500) {
+      if (windowScrollY >= 2300) {
         showElement(list1);
       } else {
         showElement(list1, 0, "-250%", 0);
       }
 
-      if (windowScrollY >= 2600) {
+      if (windowScrollY >= 2400) {
         showElement(list2);
       } else {
         showElement(list2, 0, "250%", 0);
       }
 
-      if (windowScrollY >= 2700) {
+      if (windowScrollY >= 2500) {
         showElement(list3);
       } else {
         showElement(list3, 0, "-250%", 0);
       }
-      if (windowScrollY >= 2850) {
+      if (windowScrollY >= 2750) {
         showElement(list4);
       } else {
         showElement(list4, 0, "250%", 0);

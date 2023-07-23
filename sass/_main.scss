@@ -1,4 +1,4 @@
-* {
+body {
   background-color: #000;
 }
 
@@ -32,7 +32,6 @@
         text-decoration: none;
         color: $text-color;
         position: relative;
-        background-color: red;
 
         li {
           font-family: $main-font;
