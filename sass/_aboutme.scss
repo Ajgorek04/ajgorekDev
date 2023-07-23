@@ -53,7 +53,7 @@
         transform: translateX(-100%);
 
         .me_info_text {
-          padding: 25px;
+          padding: 20px;
 
           h1 {
             padding-bottom: 25px;
@@ -102,6 +102,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      word-break: normal;
 
       .technologies_info {
         width: 60%;
@@ -114,7 +115,7 @@
         transform: translateX(100%);
 
         .technologies_info_text {
-          padding: 25px;
+          padding: 20px;
 
           h1 {
             padding-bottom: 25px;
@@ -196,7 +197,7 @@
 
   .me_info,
   .technologies_info {
-    min-width: 75%;
+    min-width: 80%;
     min-height: 80%;
     border-radius: 25px;
     background-color: #0d0d0d;
