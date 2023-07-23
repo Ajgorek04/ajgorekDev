@@ -100,25 +100,25 @@
       }
     }
 
-    #list1 {
-      transform: translateY(250%);
-      opacity: 0;
-    }
+    // #list1 {
+    //   transform: translateY(250%);
+    //   opacity: 0;
+    // }
 
-    #list2 {
-      transform: translateY(-250%);
-      opacity: 0;
-    }
+    // #list2 {
+    //   transform: translateY(-250%);
+    //   opacity: 0;
+    // }
 
-    #list3 {
-      transform: translateY(250%);
-      opacity: 0;
-    }
+    // #list3 {
+    //   transform: translateY(250%);
+    //   opacity: 0;
+    // }
 
-    #list4 {
-      transform: translateY(-250%);
-      opacity: 0;
-    }
+    // #list4 {
+    //   transform: translateY(-250%);
+    //   opacity: 0;
+    // }
   }
 }
 
@@ -129,6 +129,26 @@
 
     li {
       margin: 2rem;
+    }
+
+    #list1 {
+      transform: translateX(-250%);
+      opacity: 0;
+    }
+
+    #list2 {
+      transform: translateX(250%);
+      opacity: 0;
+    }
+
+    #list3 {
+      transform: translateX(-250%);
+      opacity: 0;
+    }
+
+    #list4 {
+      transform: translateX(250%);
+      opacity: 0;
     }
   }
 }

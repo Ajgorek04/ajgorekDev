@@ -144,16 +144,39 @@ window.addEventListener("scroll", () => {
     contactHeaderH1.classList.remove("contactScrollY");
   }
 
-  if (windowScrollY >= 2400 && windowWidth > 1200) {
-    showElement(list1);
+  // if (windowScrollY >= 2400 && windowWidth > 1200) {
+  //   showElement(list1);
+  //   showElement(list2);
+  //   showElement(list3);
+  //   showElement(list4);
+  // } else {
+  //   showElement(list1, 0, 0, "250%");
+  //   showElement(list2, 0, 0, "-250%");
+  //   showElement(list3, 0, 0, "250%");
+  //   showElement(list4, 0, 0, "-250%");
+  // }
+
+  if (windowScrollY >= 2500 && windowWidth <= 1200) {
+    showElement(list1, 1, 0, 0);
+  } else {
+    showElement(list1, 0, "-250%", 0);
+  }
+
+  if (windowScrollY >= 2600 && windowWidth <= 1200) {
     showElement(list2);
+  } else {
+    showElement(list2, 0, "250%", 0);
+  }
+
+  if (windowScrollY >= 2750 && windowWidth <= 1200) {
     showElement(list3);
+  } else {
+    showElement(list3, 0, "-250%", 0);
+  }
+  if (windowScrollY >= 2900 && windowWidth <= 1200) {
     showElement(list4);
   } else {
-    showElement(list1, 0, 0, "250%");
-    showElement(list2, 0, 0, "-250%");
-    showElement(list3, 0, 0, "250%");
-    showElement(list4, 0, 0, "-250%");
+    showElement(list4, 0, "250%", 0);
   }
 });
 
