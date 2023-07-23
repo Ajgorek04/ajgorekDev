@@ -59,7 +59,7 @@ window.addEventListener("scroll", () => {
     element.style.transform = `translateX(${translateX}) translateY(${translateY})`;
   };
 
-  //console.log(windowScrollY);
+  console.log(windowScrollY);
 
   // SECTION ABOUT ME
   const aboutmeHeader = document.querySelector(".aboutme_header");
@@ -129,6 +129,31 @@ window.addEventListener("scroll", () => {
 
   if (windowScrollY >= 1750 && windowWidth <= 1200) {
     showElement(swiper);
+  }
+
+  // SECTION CONTACT
+  const contactHeaderH1 = document.querySelector(".contactH1");
+  const list1 = document.querySelector("#list1");
+  const list2 = document.querySelector("#list2");
+  const list3 = document.querySelector("#list3");
+  const list4 = document.querySelector("#list4");
+
+  if (windowScrollY >= 2000 && windowWidth > 1200) {
+    contactHeaderH1.classList.add("contactScrollY");
+  } else {
+    contactHeaderH1.classList.remove("contactScrollY");
+  }
+
+  if (windowScrollY >= 2400 && windowWidth > 1200) {
+    showElement(list1);
+    showElement(list2);
+    showElement(list3);
+    showElement(list4);
+  } else {
+    showElement(list1, 0, 0, "250%");
+    showElement(list2, 0, 0, "-250%");
+    showElement(list3, 0, 0, "250%");
+    showElement(list4, 0, 0, "-250%");
   }
 });
 
