@@ -59,7 +59,7 @@ window.addEventListener("scroll", () => {
     element.style.transform = `translateX(${translateX}) translateY(${translateY})`;
   };
 
-  console.log(windowScrollY);
+  // console.log(windowScrollY);
 
   // SECTION ABOUT ME
   const aboutmeHeader = document.querySelector(".aboutme_header");
@@ -145,8 +145,6 @@ window.addEventListener("scroll", () => {
 
   function windowww() {
     if (windowWidth > 1200) {
-      console.log(1);
-
       if (windowScrollY >= 2400) {
         showElement(list1);
         showElement(list2);
@@ -163,25 +161,24 @@ window.addEventListener("scroll", () => {
 
   function window2() {
     if (windowWidth < 1200) {
-      console.log(2);
-      if (windowScrollY >= 2300) {
+      if (windowScrollY >= 2350) {
         showElement(list1);
       } else {
         showElement(list1, 0, "-250%", 0);
       }
 
-      if (windowScrollY >= 2400) {
+      if (windowScrollY >= 2450) {
         showElement(list2);
       } else {
         showElement(list2, 0, "250%", 0);
       }
 
-      if (windowScrollY >= 2500) {
+      if (windowScrollY >= 2550) {
         showElement(list3);
       } else {
         showElement(list3, 0, "-250%", 0);
       }
-      if (windowScrollY >= 2750) {
+      if (windowScrollY >= 2650) {
         showElement(list4);
       } else {
         showElement(list4, 0, "250%", 0);
