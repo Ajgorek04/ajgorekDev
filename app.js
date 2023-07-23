@@ -74,7 +74,8 @@ window.addEventListener("scroll", () => {
     aboutmeHeaderH1.classList.remove("aboutmeScrollY");
   }
 
-  // Animacja on scroll dla ekranow > 1200
+  //
+
   if (windowScrollY >= 250 && windowWidth > 1200) {
     showElement(me_info);
     showElement(technologies_info);
@@ -83,7 +84,7 @@ window.addEventListener("scroll", () => {
     showElement(technologies_info, 0, "100%");
   }
 
-  if (windowScrollY >= 850 && windowWidth > 1200) {
+  if (windowScrollY >= 800 && windowWidth > 1200) {
     showElement(goDown);
   } else {
     showElement(goDown, 0, 0, "100%");
@@ -91,7 +92,6 @@ window.addEventListener("scroll", () => {
 
   //
 
-  // Animacja on scroll dla ekranow < 1200
   if (windowScrollY >= 250 && windowWidth <= 1200) {
     showElement(me_info);
   }
@@ -102,13 +102,13 @@ window.addEventListener("scroll", () => {
   if (windowScrollY >= 1300 && windowWidth <= 1200) {
     showElement(goDown);
   }
+  //END ABOUTME SECTION
 
   // SECTION PROJECTS
   const projectsHeaderH1 = document.querySelector(".projects_header_h1");
   const swiper = document.querySelector(".swiper");
   const moreprojects = document.querySelector(".moreprojects");
 
-  // Animacja on scroll dla ekranow > 1200
   if (windowScrollY >= 950 && windowWidth > 1200) {
     projectsHeaderH1.classList.add("projectsScrollY");
   } else {
@@ -121,8 +121,6 @@ window.addEventListener("scroll", () => {
     showElement(swiper, 0, 0, "100%");
   }
 
-  // Animacja on scroll dla ekranow < 1200
-
   if (windowScrollY >= 1450 && windowWidth <= 1200) {
     projectsHeaderH1.classList.add("projectsScrollY");
   }
@@ -130,6 +128,7 @@ window.addEventListener("scroll", () => {
   if (windowScrollY >= 1750 && windowWidth <= 1200) {
     showElement(swiper);
   }
+  // END SECTION PROJECTS
 
   // SECTION CONTACT
   const contactHeaderH1 = document.querySelector(".contactH1");
@@ -144,40 +143,53 @@ window.addEventListener("scroll", () => {
     contactHeaderH1.classList.remove("contactScrollY");
   }
 
-  // if (windowScrollY >= 2400 && windowWidth > 1200) {
-  //   showElement(list1);
-  //   showElement(list2);
-  //   showElement(list3);
-  //   showElement(list4);
-  // } else {
-  //   showElement(list1, 0, 0, "250%");
-  //   showElement(list2, 0, 0, "-250%");
-  //   showElement(list3, 0, 0, "250%");
-  //   showElement(list4, 0, 0, "-250%");
-  // }
+  function windowww() {
+    if (windowWidth > 1200) {
+      console.log(1);
 
-  if (windowScrollY >= 2500 && windowWidth <= 1200) {
-    showElement(list1, 1, 0, 0);
-  } else {
-    showElement(list1, 0, "-250%", 0);
-  }
-
-  if (windowScrollY >= 2600 && windowWidth <= 1200) {
-    showElement(list2);
-  } else {
-    showElement(list2, 0, "250%", 0);
+      if (windowScrollY >= 2400) {
+        showElement(list1);
+        showElement(list2);
+        showElement(list3);
+        showElement(list4);
+      } else {
+        showElement(list1, 0, 0, "250%");
+        showElement(list2, 0, 0, "-250%");
+        showElement(list3, 0, 0, "250%");
+        showElement(list4, 0, 0, "-250%");
+      }
+    }
   }
 
-  if (windowScrollY >= 2750 && windowWidth <= 1200) {
-    showElement(list3);
-  } else {
-    showElement(list3, 0, "-250%", 0);
+  function window2() {
+    if (windowWidth < 1200) {
+      console.log(2);
+      if (windowScrollY >= 2500) {
+        showElement(list1);
+      } else {
+        showElement(list1, 0, "-250%", 0);
+      }
+
+      if (windowScrollY >= 2600) {
+        showElement(list2);
+      } else {
+        showElement(list2, 0, "250%", 0);
+      }
+
+      if (windowScrollY >= 2700) {
+        showElement(list3);
+      } else {
+        showElement(list3, 0, "-250%", 0);
+      }
+      if (windowScrollY >= 2850) {
+        showElement(list4);
+      } else {
+        showElement(list4, 0, "250%", 0);
+      }
+    }
   }
-  if (windowScrollY >= 2900 && windowWidth <= 1200) {
-    showElement(list4);
-  } else {
-    showElement(list4, 0, "250%", 0);
-  }
+  window2();
+  windowww();
 });
 
 //
