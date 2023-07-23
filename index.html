@@ -130,15 +130,14 @@
                             <p class="techs2"> <i class="fa-solid fa-database fa-xl"></i>&nbsp;mysql </p>
                         </div>
                         <h3> Technologies I'll be learning soon <h3>
-                                <hr>
-                                <div>
-                                    <p class="techs3"> <i class="fa-brands fa-react fa-lg"></i>&nbsp;reactjs </p>
-                                </div>
+                        <hr>
+                            <div>
+                                <p class="techs3"> <i class="fa-brands fa-react fa-lg"></i>&nbsp;reactjs </p>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
 
 
@@ -180,33 +179,66 @@
 
 
     <section class="contact" id="contact">
-        <h1> Contact </h1>
+        <header>
+            <h1> Contact </h1>
+        </header>
+        <ul class="contactList">
+            <li>
+                <a href="https://github.com/Ajgorek04" target="_blank">
+                    <i class="fa-brands fa-github fa-2xl"></i>
+                    <p> GitHub </p>
+                </a>
+            </li>
+            <li>
+                <a href="https://discord.com/.nowiem" target="_blank">
+                    <i class="fa-brands fa-discord fa-2xl"></i>
+                    <p> Discord </p>
+                </a>
+            </li>
+            <li>
+                <a href="https://linkedin.com/in/Ajgorek" target="_blank">
+                    <i class="fa-brands fa-linkedin-in fa-2xl wiemm"></i>
+                    <p> LinkedIn </p>
+                </a>
+            </li>
+            <li>
+                <a href="#" target="_blank">
+                    <i class="fa-regular fa-envelope fa-2xl"></i>
+                    <p> E-mail </p>
+                </a>
+            </li>
+        </ul>
+        <footer> &copy; All rights reserved 2023 Ajgorek </footer>
     </section>
 
-    <script src="app.js"></script>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
 
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
+
+
+<script src="app.js"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
 </body>
 
 </html>
