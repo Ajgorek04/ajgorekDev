@@ -1,9 +1,0 @@
-const showElement = (
-  element,
-  opacity = 1,
-  translateX = "0",
-  translateY = "0"
-) => {
-  element.style.opacity = opacity;
-  element.style.transform = `translateX(${translateX}) translateY(${translateY})`;
-};
