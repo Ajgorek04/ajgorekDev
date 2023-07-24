@@ -14,7 +14,7 @@ body {
     color: #fff;
     width: 0;
     height: 0;
-    background: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 0.75);
     position: fixed;
     top: 0;
     right: 0;
@@ -49,7 +49,6 @@ body {
           width: 100%;
           height: 2px;
           background-image: linear-gradient(to right, #00ccff, #d500f9);
-          animation: wiem 3s linear infinite;
         }
       }
     }
