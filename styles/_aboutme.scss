@@ -43,6 +43,8 @@
         text-align: center;
         display: flex;
         flex-direction: column;
+        transform: translateX(-200%);
+        transition: 1s ease-in;
 
         .me_info_text {
           padding: 20px;
@@ -101,9 +103,8 @@
         border-radius: 20px;
         background-color: #0d0d0d;
         text-align: center;
-        // opacity: 0;
-        // transition: all 0.75s ease;
-        // transform: translateX(100%);
+        transform: translateX(200%);
+        transition: 1s ease-in;
 
         .technologies_info_text {
           padding: 20px;
@@ -180,19 +181,8 @@
   }
 }
 
-.anim {
-  opacity: 0;
-}
-
-@keyframes anim1 {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.offAnim {
+  transform: translateX(0) !important;
 }
 
 @media only screen and (max-width: 75rem) {
