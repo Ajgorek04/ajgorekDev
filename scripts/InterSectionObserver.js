@@ -26,12 +26,12 @@ if (windowWidth > 1200) {
           addOffAnimClass(aboutme_header);
           addOffAnimClass(me_info);
           addOffAnimClass(technologies_info);
-          setTimeout(addOffAnimClass(goDown), 250);
+          setTimeout(addOffAnimClass(goDownA), 1000);
         } else {
           removeOffAnimClass(aboutme_header);
           removeOffAnimClass(me_info);
           removeOffAnimClass(technologies_info);
-          removeOffAnimClass(goDown);
+          removeOffAnimClass(goDownA);
         }
       });
     },
@@ -92,27 +92,6 @@ else if (windowWidth <= 1200) {
         aboutMeObserverTechnologies.observe(item);
       }
     });
-  // DIV goDown
-  aboutMeObserverGoDown = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio > 1 / 4) {
-          addOffAnimClass(goDownA);
-          console.log("wiem");
-        } else {
-          removeOffAnimClass(goDownA);
-        }
-      });
-    },
-    {
-      threshold: 1 / 4,
-    }
-  );
-  const goDown = document.querySelectorAll(".goDown").forEach((item) => {
-    if (windowWidth <= 1200) {
-      aboutMeObserverGoDown.observe(item);
-    }
-  });
 }
 
 // END SECTION ABOUT ME

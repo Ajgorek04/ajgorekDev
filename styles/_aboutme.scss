@@ -80,13 +80,12 @@
       align-items: flex-end;
       justify-content: center;
       margin-bottom: 5%;
-      transition: 1s ease-in;
 
       a {
         text-decoration: none;
         color: $text-color;
-        transition: all 0.75s ease;
-        transform: translateY(150%);
+        transform: translateY(-100rem);
+        transition: 1s ease-in;
       }
 
       a:hover {
@@ -213,9 +212,11 @@
 
   .goDown {
     margin-top: 5%;
-  }
-
-  .goDown {
     order: 1; /* Przeniesienie klasy "goDown" pod sekcję "technologies" */
+
+    a {
+      transform: translateY(0);
+      background-color: red;
+    }
   }
 }
