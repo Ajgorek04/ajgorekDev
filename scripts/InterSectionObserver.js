@@ -1,10 +1,13 @@
 const aboutme_header = document.querySelector(".aboutme_header");
-const infoDiv = document.querySelectorAll(".info");
+const infoDiv = document.querySelectorAll(".aboutme");
 const me_info = document.querySelector(".me_info");
 const technologies_info = document.querySelector(".technologies_info");
 const goDown = document.querySelector(".goDown");
 
 // SECTION ABOUT ME
+function addOffAnimClass() {
+  goDown.classList.add("offAnim");
+}
 
 if (windowWidth > 1200) {
   observer = new IntersectionObserver(
@@ -15,9 +18,7 @@ if (windowWidth > 1200) {
           // Dostosuj wartość progu tutaj /\
           me_info.classList.add("offAnim");
           technologies_info.classList.add("offAnim");
-          setInterval(() => {
-            goDown.classList.add("offAnim");
-          }, 1000);
+          setTimeout(addOffAnimClass, 250);
         } else {
           me_info.classList.remove("offAnim");
           technologies_info.classList.remove("offAnim");
