@@ -14,7 +14,7 @@
     align-items: center;
     overflow: hidden;
     transform: translateY(-100%);
-    transition: 1.5s ease-in;
+    transition: 0.5s ease-in;
 
     p {
       font-size: 2rem;
@@ -80,13 +80,13 @@
       align-items: flex-end;
       justify-content: center;
       margin-bottom: 5%;
-      transform: translateY(-200%);
       transition: 1s ease-in;
 
       a {
         text-decoration: none;
         color: $text-color;
         transition: all 0.75s ease;
+        transform: translateY(150%);
       }
 
       a:hover {
@@ -187,6 +187,7 @@
 }
 
 .offAnim {
+  opacity: 1 !important;
   transform: translateX(0) !important;
   transform: translateY(0) !important;
 }

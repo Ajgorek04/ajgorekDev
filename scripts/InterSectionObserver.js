@@ -1,30 +1,37 @@
+// SECTION ABOUT ME
+// Width > 1200
 const aboutme_header = document.querySelector(".aboutme_header");
-const infoDiv = document.querySelectorAll(".aboutme");
 const me_info = document.querySelector(".me_info");
 const technologies_info = document.querySelector(".technologies_info");
-const goDown = document.querySelector(".goDown");
+const goDownA = document.querySelector(".goDown a");
+// Width <= 1200
+//
 
-// SECTION ABOUT ME
-function addOffAnimClass() {
-  goDown.classList.add("offAnim");
+function addOffAnimClass(target) {
+  target.classList.add("offAnim");
 }
 
+function removeOffAnimClass(target) {
+  target.classList.remove("offAnim");
+}
+
+// Observer for width > 1200
 if (windowWidth > 1200) {
-  observer = new IntersectionObserver(
+  aboutMeObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio > 1 / 4) {
           // Adjust the threshold here /\
           // Dostosuj wartość progu tutaj /\
-          aboutme_header.classList.add("offAnim");
-          me_info.classList.add("offAnim");
-          technologies_info.classList.add("offAnim");
-          setTimeout(addOffAnimClass, 250);
+          addOffAnimClass(aboutme_header);
+          addOffAnimClass(me_info);
+          addOffAnimClass(technologies_info);
+          setTimeout(addOffAnimClass(goDown), 250);
         } else {
-          aboutme_header.classList.remove("offAnim");
-          me_info.classList.remove("offAnim");
-          technologies_info.classList.remove("offAnim");
-          goDown.classList.remove("offAnim");
+          removeOffAnimClass(aboutme_header);
+          removeOffAnimClass(me_info);
+          removeOffAnimClass(technologies_info);
+          removeOffAnimClass(goDown);
         }
       });
     },
@@ -33,14 +40,79 @@ if (windowWidth > 1200) {
       // Ustaw próg na 1/4
     }
   );
-} else if (windowWidth <= 1200) {
-  console.log("wiem");
+  const infoDiv = document.querySelectorAll(".aboutme").forEach((item) => {
+    if (windowWidth > 1200) {
+      aboutMeObserver.observe(item);
+    }
+  });
 }
-
-infoDiv.forEach((item) => {
-  if (windowWidth > 1200) {
-    observer.observe(item);
-  }
-});
+// Observer for width <= 1200
+else if (windowWidth <= 1200) {
+  // DIV ME
+  aboutMeObserverME = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 1 / 4) {
+          addOffAnimClass(aboutme_header);
+          addOffAnimClass(me_info);
+        } else {
+          removeOffAnimClass(aboutme_header);
+          removeOffAnimClass(me_info);
+        }
+      });
+    },
+    {
+      threshold: 1 / 4,
+    }
+  );
+  const me = document.querySelectorAll(".me").forEach((item) => {
+    if (windowWidth <= 1200) {
+      aboutMeObserverME.observe(item);
+    }
+  });
+  // DIV TECHNOLOGIES
+  aboutMeObserverTechnologies = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 1 / 4) {
+          addOffAnimClass(technologies_info);
+        } else {
+          removeOffAnimClass(technologies_info);
+        }
+      });
+    },
+    {
+      threshold: 1 / 4,
+    }
+  );
+  const technologies = document
+    .querySelectorAll(".technologies")
+    .forEach((item) => {
+      if (windowWidth <= 1200) {
+        aboutMeObserverTechnologies.observe(item);
+      }
+    });
+  // DIV goDown
+  aboutMeObserverGoDown = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 1 / 4) {
+          addOffAnimClass(goDownA);
+          console.log("wiem");
+        } else {
+          removeOffAnimClass(goDownA);
+        }
+      });
+    },
+    {
+      threshold: 1 / 4,
+    }
+  );
+  const goDown = document.querySelectorAll(".goDown").forEach((item) => {
+    if (windowWidth <= 1200) {
+      aboutMeObserverGoDown.observe(item);
+    }
+  });
+}
 
 // END SECTION ABOUT ME
