@@ -16,10 +16,12 @@ if (windowWidth > 1200) {
         if (entry.intersectionRatio > 1 / 4) {
           // Adjust the threshold here /\
           // Dostosuj wartość progu tutaj /\
+          aboutme_header.classList.add("offAnim");
           me_info.classList.add("offAnim");
           technologies_info.classList.add("offAnim");
           setTimeout(addOffAnimClass, 250);
         } else {
+          aboutme_header.classList.remove("offAnim");
           me_info.classList.remove("offAnim");
           technologies_info.classList.remove("offAnim");
           goDown.classList.remove("offAnim");
