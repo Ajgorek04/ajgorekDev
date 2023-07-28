@@ -192,31 +192,32 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .info {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin-bottom: 10%;
-  }
+  .aboutme {
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-bottom: 10%;
 
-  .me_info,
-  .technologies_info {
-    min-width: 80%;
-    min-height: 80%;
-    border-radius: 25px;
-    background-color: #0d0d0d;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-  }
+      .me_info,
+      .technologies_info {
+        min-width: 80%;
+        min-height: 80%;
+        border-radius: 25px;
+        background-color: #0d0d0d;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
 
-  .goDown {
-    margin-top: 5%;
-    order: 1; /* Przeniesienie klasy "goDown" pod sekcję "technologies" */
+      .goDown {
+        margin-top: 5%;
+        order: 1; /* Przeniesienie klasy "goDown" pod sekcję "technologies" */
 
-    a {
-      transform: translateY(0);
-      background-color: red;
+        a {
+          transform: translateY(0);
+        }
+      }
     }
   }
 }
