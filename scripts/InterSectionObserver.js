@@ -107,3 +107,58 @@ if (windowWidth > 1200) {
 }
 
 // END SECTION ABOUT ME
+
+// SECTION PROJECTS
+
+const projects_header = document.querySelector(".projects_header");
+const sswiper = document.querySelector(".swiper");
+const moreprojects = document.querySelector(".moreprojects");
+
+observerProjectsText = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > 0) {
+      addOffAnimClass(projects_header);
+    } else {
+      removeOffAnimClass(projects_header);
+    }
+  });
+});
+
+const projects = document
+  .querySelectorAll(".projects")
+  .forEach((item) => observerProjectsText.observe(item));
+
+observerProjectsSwiper = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio > 1 / 2) {
+        addOffAnimClass(sswiper);
+      } else {
+        removeOffAnimClass(sswiper);
+      }
+    });
+  },
+  {
+    threshold: 1 / 2,
+  }
+);
+
+const slider = document.querySelectorAll(".slider").forEach((item) => {
+  observerProjectsSwiper.observe(item);
+});
+
+observerProjectsMoreProjectsText = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > 0) {
+      addOffAnimClass(moreprojects);
+    } else {
+      removeOffAnimClass(moreprojects);
+    }
+  });
+});
+
+const moreprojectsA = document
+  .querySelectorAll(".moreprojectsA")
+  .forEach((item) => {
+    observerProjectsMoreProjectsText.observe(item);
+  });
