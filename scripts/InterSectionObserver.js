@@ -1,12 +1,3 @@
-// SECTION ABOUT ME
-// Width > 1200
-const aboutme_header = document.querySelector(".aboutme_header");
-const me_info = document.querySelector(".me_info");
-const technologies_info = document.querySelector(".technologies_info");
-const goDownA = document.querySelector(".goDown a");
-// Width <= 1200
-//
-
 function addOffAnimClass(target) {
   target.classList.add("offAnim");
 }
@@ -15,7 +6,15 @@ function removeOffAnimClass(target) {
   target.classList.remove("offAnim");
 }
 
+// SECTION ABOUT ME
+
+const aboutme_header = document.querySelector(".aboutme_header");
+const me_info = document.querySelector(".me_info");
+const technologies_info = document.querySelector(".technologies_info");
+const goDownA = document.querySelector(".goDown a");
+
 // Observer for width > 1200
+
 if (windowWidth > 1200) {
   aboutMeObserver = new IntersectionObserver(
     (entries) => {
@@ -40,15 +39,17 @@ if (windowWidth > 1200) {
       // Ustaw próg na 1/4
     }
   );
+
   const infoDiv = document.querySelectorAll(".aboutme").forEach((item) => {
     if (windowWidth > 1200) {
       aboutMeObserver.observe(item);
     }
   });
-}
-// Observer for width <= 1200
-else if (windowWidth <= 1200) {
+} else if (windowWidth <= 1200) {
+  // Observer for width <= 1200
+
   // DIV ME
+
   aboutMeObserverME = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -66,11 +67,11 @@ else if (windowWidth <= 1200) {
     }
   );
   const me = document.querySelectorAll(".me").forEach((item) => {
-    if (windowWidth <= 1200) {
-      aboutMeObserverME.observe(item);
-    }
+    aboutMeObserverME.observe(item);
   });
+
   // DIV TECHNOLOGIES
+
   aboutMeObserverTechnologies = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -88,10 +89,21 @@ else if (windowWidth <= 1200) {
   const technologies = document
     .querySelectorAll(".technologies")
     .forEach((item) => {
-      if (windowWidth <= 1200) {
-        aboutMeObserverTechnologies.observe(item);
+      aboutMeObserverTechnologies.observe(item);
+    });
+
+  aboutMeObserverGoDown = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio > 0) {
+        addOffAnimClass(goDownA);
+      } else {
+        removeOffAnimClass(goDownA);
       }
     });
+  });
+  const goDown = document.querySelectorAll(".goDown").forEach((item) => {
+    aboutMeObserverGoDown.observe(item);
+  });
 }
 
 // END SECTION ABOUT ME
