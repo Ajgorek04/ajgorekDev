@@ -162,3 +162,76 @@ const moreprojectsA = document
   .forEach((item) => {
     observerProjectsMoreProjectsText.observe(item);
   });
+
+// END SECTION PROJECTS
+
+// SECTION CONTACT
+// Observer for width > 1200
+
+const contact_header = document.querySelector(".contact_header");
+
+observerProjectsText = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > 0) {
+      addOffAnimClass(contact_header);
+    } else {
+      removeOffAnimClass(contact_header);
+    }
+  });
+});
+
+const contact = document
+  .querySelectorAll(".contact")
+  .forEach((item) => observerProjectsText.observe(item));
+
+const listElements = document.querySelectorAll(".contactList div");
+const list1 = document.querySelector("#list1");
+const list2 = document.querySelector("#list2");
+const list3 = document.querySelector("#list3");
+const list4 = document.querySelector("#list4");
+
+if (windowWidth > 1200) {
+  observeListElements = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio > 0) {
+        listElements.forEach((element) => {
+          addOffAnimClass(element);
+        });
+      } else {
+        listElements.forEach((element) => {
+          removeOffAnimClass(element);
+        });
+      }
+    });
+  });
+
+  const contactList = document
+    .querySelectorAll(".contactList")
+    .forEach((item) => {
+      observeListElements.observe(item);
+    });
+} else if (windowWidth <= 1200) {
+  function createIntersectionObserver(element, targetElement) {
+    return new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > 1 / 2) {
+            addOffAnimClass(targetElement);
+          } else {
+            removeOffAnimClass(targetElement);
+          }
+        });
+      },
+      {
+        threshold: 1 / 2,
+      }
+    ).observe(element);
+  }
+
+  const listDivs = document.querySelectorAll(".contactList div");
+
+  listDivs.forEach((div, index) => {
+    const targetElement = document.querySelector(`#list${index + 1}`); // +1 Bo index 1 jest zerowy
+    createIntersectionObserver(div, targetElement);
+  });
+}
