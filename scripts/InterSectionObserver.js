@@ -184,7 +184,7 @@ const contact = document
   .querySelectorAll(".contact")
   .forEach((item) => observerProjectsText.observe(item));
 
-const listElements = document.querySelectorAll(".contactList div");
+const listElements = document.querySelectorAll(".contactList div li");
 const list1 = document.querySelector("#list1");
 const list2 = document.querySelector("#list2");
 const list3 = document.querySelector("#list3");
