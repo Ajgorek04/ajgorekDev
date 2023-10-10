@@ -1,4 +1,4 @@
-# ajgor ekDev
+# ajgorekDev
 
 I'm creating my portfolio website here
 
